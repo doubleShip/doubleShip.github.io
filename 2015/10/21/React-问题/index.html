@@ -42,7 +42,7 @@
 <meta name="description" content="1、button的方法获取不了thisReact发布了最新的0.13版，并提供了对ES6的支持。在新版本中，一个小小的改变是React取消了函数的自动绑定，也就是说，以前可以这样去绑定一个事件：
 1&amp;lt;button onClick=&amp;#123;this.handleSubmit&amp;#125;&amp;gt;Submit&amp;lt;/button&amp;gt;
 而在以ES6语法定义的组件中，必须写为：
-1&amp;lt;">
+Submi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React 问题">
 <meta property="og:url" content="http://yoursite.com/2015/10/21/React-问题/index.html">
@@ -50,14 +50,14 @@
 <meta property="og:description" content="1、button的方法获取不了thisReact发布了最新的0.13版，并提供了对ES6的支持。在新版本中，一个小小的改变是React取消了函数的自动绑定，也就是说，以前可以这样去绑定一个事件：
 1&amp;lt;button onClick=&amp;#123;this.handleSubmit&amp;#125;&amp;gt;Submit&amp;lt;/button&amp;gt;
 而在以ES6语法定义的组件中，必须写为：
-1&amp;lt;">
-<meta property="og:updated_time" content="2015-10-21T15:19:06.000Z">
+Submi">
+<meta property="og:updated_time" content="2015-10-21T15:20:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React 问题">
 <meta name="twitter:description" content="1、button的方法获取不了thisReact发布了最新的0.13版，并提供了对ES6的支持。在新版本中，一个小小的改变是React取消了函数的自动绑定，也就是说，以前可以这样去绑定一个事件：
 1&amp;lt;button onClick=&amp;#123;this.handleSubmit&amp;#125;&amp;gt;Submit&amp;lt;/button&amp;gt;
 而在以ES6语法定义的组件中，必须写为：
-1&amp;lt;">
+Submi">
 
 
 <script>
@@ -208,7 +208,8 @@
         <span itemprop="articleBody"><h4 id="1、button的方法获取不了this">1、button的方法获取不了this</h4><p>React发布了最新的0.13版，并提供了对ES6的支持。在新版本中，一个小小的改变是React取消了函数的自动绑定，也就是说，以前可以这样去绑定一个事件：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">onClick</span>=<span class="value">&#123;this.handleSubmit&#125;</span>&gt;</span>Submit<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>而在以ES6语法定义的组件中，必须写为：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">onClick</span>=<span class="value">&#123;this.handleSubmit.bind(this)&#125;</span>&gt;</span>Submit<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br></pre></td></tr></table></figure></span>
+<button onclick="{this.handleSubmit.bind(this)}">Submit</button>
+</span>
       
     </div>
 
