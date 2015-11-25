@@ -169,6 +169,105 @@
           
           
             
+              <a class="post-title-link" href="/2015/11/25/关于position/" itemprop="url">
+                关于position
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-11-25T11:24:19+08:00" content="2015-11-25">
+            2015-11-25
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="CSS_position_属性可以取5种值">CSS position 属性可以取5种值</h3><h4 id="static">static</h4><ul>
+<li><p>static 是 position 默认的属性值。任何应用了 position:static 的元素都处于常规文档流中。它处于什么位置以及它如何影响周边的元素都是由盒模型所决定的。</p>
+</li>
+<li><p>一个 static 定位的元素会忽略所有 top，right，bottom，left 以及 z-index 属性所声明的值。为了让你的元素能使用任何的这些属性，你需要先为它的 position 属性应用这三个值的其中之一： absolute，relative，fixed</p>
+</li>
+</ul>
+<h4 id="position">position</h4><ul>
+<li>值为 inherit 的元素和其他所有属性的继承值一样，元素只是简单地应用了与父元素一样的 position 值。</li>
+</ul>
+<h4 id="absolute">absolute</h4><ul>
+<li><p>绝对定位的元素会完全地从常规文档流中脱离。对于包围它的元素而言，它会将该绝对定位元素视为不存在。就好像 display 属性被设为 none 一样。如果你想要保持它所占有的位置而不被其他元素所填充，那么你需要使用其他的定位方式。</p>
+</li>
+<li><p>一个绝对定位的元素的起点位置是相对于它的第一个 position 值不为 static 的父元素而言的。如果在它的父元素链上没有满足条件的父元素，那么绝对定位元素则会相对于文档窗口来进行定位。</p>
+</li>
+<li><p>当你在一个元素的样式上设置 position:absolute 意味着需要考虑父元素，并且如果父元素的 position 值不为 static ，那么绝对定位元素的起点为父元素的左上角位置。</p>
+</li>
+<li><p>如果父元素没有应用除了 static 以外的 position 定位，那么它会检查父元素的父元素是否有应用非 static 定位。如果该元素应用了定位，那么它的左上角便会成为绝对元素的起点位置。如果没有则会继续向上遍历DOM直到找到一个定位元素或者寻找失败以到达最外层的浏览器窗口。</p>
+</li>
+</ul>
+<h4 id="relative">relative</h4><ul>
+<li><p>相对定位的元素也是根据 top, right, bottom, 和 left 四个属性来决定自己的位置的。但只是相对于它们原来所处于的位置进行移动。在某种意义上来说，为元素设置相对定位和为元素添加 margin 有点相似，但也有一个重要的区别。区别就是在围绕在相对定位元素附近的元素会忽略相对定位元素的移动。</p>
+</li>
+<li><p>我们可以把它看做是一张图片的重像从真实的图片的位置开始进行了一点移动。它原始图片所占据的位置仍然保留，但我们已经没法再看到它，只能看到它的重像。这样就让元素之间可以进行位置的重叠，因为相对定位元素能够移动到其他元素所占据的空间中。</p>
+</li>
+</ul>
+<h4 id="fixed">fixed</h4><ul>
+<li><p>固定定位的行为类似于绝对定位，但也有一些不同的地方。</p>
+</li>
+<li><p>首先，固定定位总是相对于浏览器窗口来进行定位的，并且通过哪些属性的 top, right, bottom, 和 left 属性来决定其位置。它抛弃了它的父元素.</p>
+</li>
+<li><p>第二个不同点是其在名字上是继承的。固定定位的元素是固定的。它们并不随着页面的滚动而移动。你可以告诉元素它所处的位置并永远不再移动。</p>
+</li>
+</ul>
+<h4 id="相关问题">相关问题</h4><ol>
+<li>你不能在同一个属性当中应用定位属性和浮动</li>
+<li>Margin 不会在绝对元素上折叠</li>
+<li>IE在 Z-index 上有一些BUG</li>
+</ol>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/21/React-问题/" itemprop="url">
                 React 问题
               </a>
@@ -767,7 +866,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
