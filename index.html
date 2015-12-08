@@ -169,6 +169,84 @@
           
           
             
+              <a class="post-title-link" href="/2015/12/08/HTTP响应头信息中的-X-Frame-Options属性/" itemprop="url">
+                HTTP响应头信息中的 X-Frame-Options属性
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-12-08T15:19:07+08:00" content="2015-12-08">
+            2015-12-08
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>####X-Frame-Options 有三个可选的值：</p>
+<ul>
+<li>DENY：浏览器拒绝当前页面加载任何Frame页面</li>
+<li>SAMEORIGIN：frame页面的地址只能为同源域名下的页面</li>
+<li>ALLOW-FROM：origin为允许frame加载的页面地址</li>
+<li>可以在Network的Response Headers查看页面该属性</li>
+</ul>
+<p>####具体的设置方法：</p>
+<p>#####Apache配置：</p>
+<p><code>Header always append X-Frame-Options SAMEORIGIN</code></p>
+<p>#####nginx配置：</p>
+<p><code>add_header X-Frame-Options SAMEORIGIN;</code></p>
+<p>#####IIS配置：</p>
+<p>`<system.webserver><br>…</system.webserver></p>
+<p><httpprotocol></httpprotocol></p>
+<p><customheaders></customheaders></p>
+<p><add name="X-Frame-Options" value="SAMEORIGIN"><br><br><br>…<br>`</add></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/11/25/关于position/" itemprop="url">
                 关于position
               </a>
@@ -866,7 +944,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
