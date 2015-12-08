@@ -200,23 +200,15 @@
 
       
         
-          <span itemprop="articleBody"><p>####X-Frame-Options 有三个可选的值：</p>
-<ul>
+          <span itemprop="articleBody"><h4 id="X-Frame-Options_有三个可选的值：">X-Frame-Options 有三个可选的值：</h4><ul>
 <li>DENY：浏览器拒绝当前页面加载任何Frame页面</li>
 <li>SAMEORIGIN：frame页面的地址只能为同源域名下的页面</li>
 <li>ALLOW-FROM：origin为允许frame加载的页面地址</li>
 <li>可以在Network的Response Headers查看页面该属性</li>
 </ul>
-<p>####具体的设置方法：</p>
-<p>#####Apache配置：</p>
-<p><code>Header always append X-Frame-Options SAMEORIGIN</code></p>
-<p>#####nginx配置：</p>
-<p><code>add_header X-Frame-Options SAMEORIGIN;</code></p>
-<p>#####IIS配置：</p>
-<p>`<system.webserver><br>…</system.webserver></p>
-<p><httpprotocol></httpprotocol></p>
-<p><customheaders></customheaders></p>
-<p><add name="X-Frame-Options" value="SAMEORIGIN"><br><br><br>…<br>`</add></p>
+<h4 id="具体的设置方法：">具体的设置方法：</h4><h5 id="Apache配置：">Apache配置：</h5><p><code>Header always append X-Frame-Options SAMEORIGIN</code></p>
+<h5 id="nginx配置：">nginx配置：</h5><p><code>add_header X-Frame-Options SAMEORIGIN;</code></p>
+<h5 id="IIS配置：">IIS配置：</h5><p><code>&lt;system.webServer&gt;</code><br><code>&lt;httpProtocol&gt;</code><br><code>&lt;customHeaders&gt;</code><br><code>&lt;add name=&quot;X-Frame-Options&quot; value=&quot;SAMEORIGIN&quot; /&gt;</code><br><code>&lt;/customHeaders&gt;</code><br><code>&lt;/httpProtocol&gt;</code><br><code>&lt;/system.webServer&gt;</code></p>
 </span>
         
       

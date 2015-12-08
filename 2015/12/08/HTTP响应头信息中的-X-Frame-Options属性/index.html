@@ -39,43 +39,34 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="####X-Frame-Options 有三个可选的值：
-
+<meta name="description" content="X-Frame-Options 有三个可选的值：
 DENY：浏览器拒绝当前页面加载任何Frame页面
 SAMEORIGIN：frame页面的地址只能为同源域名下的页面
 ALLOW-FROM：origin为允许frame加载的页面地址
 可以在Network的Response Headers查看页面该属性
 
-####具体的设置方法：
-#####Apache配置：
-Header always">
+具体的设置方法：Apache配置：Header always append X-Frame-O">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP响应头信息中的 X-Frame-Options属性">
 <meta property="og:url" content="http://yoursite.com/2015/12/08/HTTP响应头信息中的-X-Frame-Options属性/index.html">
 <meta property="og:site_name" content="Yvan's Note">
-<meta property="og:description" content="####X-Frame-Options 有三个可选的值：
-
+<meta property="og:description" content="X-Frame-Options 有三个可选的值：
 DENY：浏览器拒绝当前页面加载任何Frame页面
 SAMEORIGIN：frame页面的地址只能为同源域名下的页面
 ALLOW-FROM：origin为允许frame加载的页面地址
 可以在Network的Response Headers查看页面该属性
 
-####具体的设置方法：
-#####Apache配置：
-Header always">
-<meta property="og:updated_time" content="2015-12-08T07:23:17.000Z">
+具体的设置方法：Apache配置：Header always append X-Frame-O">
+<meta property="og:updated_time" content="2015-12-08T07:25:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP响应头信息中的 X-Frame-Options属性">
-<meta name="twitter:description" content="####X-Frame-Options 有三个可选的值：
-
+<meta name="twitter:description" content="X-Frame-Options 有三个可选的值：
 DENY：浏览器拒绝当前页面加载任何Frame页面
 SAMEORIGIN：frame页面的地址只能为同源域名下的页面
 ALLOW-FROM：origin为允许frame加载的页面地址
 可以在Network的Response Headers查看页面该属性
 
-####具体的设置方法：
-#####Apache配置：
-Header always">
+具体的设置方法：Apache配置：Header always append X-Frame-O">
 
 
 <script>
@@ -223,23 +214,15 @@ Header always">
       
 
       
-        <span itemprop="articleBody"><p>####X-Frame-Options 有三个可选的值：</p>
-<ul>
+        <span itemprop="articleBody"><h4 id="X-Frame-Options_有三个可选的值：">X-Frame-Options 有三个可选的值：</h4><ul>
 <li>DENY：浏览器拒绝当前页面加载任何Frame页面</li>
 <li>SAMEORIGIN：frame页面的地址只能为同源域名下的页面</li>
 <li>ALLOW-FROM：origin为允许frame加载的页面地址</li>
 <li>可以在Network的Response Headers查看页面该属性</li>
 </ul>
-<p>####具体的设置方法：</p>
-<p>#####Apache配置：</p>
-<p><code>Header always append X-Frame-Options SAMEORIGIN</code></p>
-<p>#####nginx配置：</p>
-<p><code>add_header X-Frame-Options SAMEORIGIN;</code></p>
-<p>#####IIS配置：</p>
-<p>`<system.webserver><br>…</system.webserver></p>
-<p><httpprotocol></httpprotocol></p>
-<p><customheaders></customheaders></p>
-<p><add name="X-Frame-Options" value="SAMEORIGIN"><br><br><br>…<br>`</add></p>
+<h4 id="具体的设置方法：">具体的设置方法：</h4><h5 id="Apache配置：">Apache配置：</h5><p><code>Header always append X-Frame-Options SAMEORIGIN</code></p>
+<h5 id="nginx配置：">nginx配置：</h5><p><code>add_header X-Frame-Options SAMEORIGIN;</code></p>
+<h5 id="IIS配置：">IIS配置：</h5><p><code>&lt;system.webServer&gt;</code><br><code>&lt;httpProtocol&gt;</code><br><code>&lt;customHeaders&gt;</code><br><code>&lt;add name=&quot;X-Frame-Options&quot; value=&quot;SAMEORIGIN&quot; /&gt;</code><br><code>&lt;/customHeaders&gt;</code><br><code>&lt;/httpProtocol&gt;</code><br><code>&lt;/system.webServer&gt;</code></p>
 </span>
       
     </div>
@@ -373,7 +356,7 @@ Header always">
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#X-Frame-Options_有三个可选的值："><span class="nav-number">1.</span> <span class="nav-text">X-Frame-Options 有三个可选的值：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体的设置方法："><span class="nav-number">2.</span> <span class="nav-text">具体的设置方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Apache配置："><span class="nav-number">2.1.</span> <span class="nav-text">Apache配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nginx配置："><span class="nav-number">2.2.</span> <span class="nav-text">nginx配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IIS配置："><span class="nav-number">2.3.</span> <span class="nav-text">IIS配置：</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
