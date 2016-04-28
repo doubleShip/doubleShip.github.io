@@ -39,43 +39,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="删除Application中的PostgreSql软件
+<meta name="description" content="CommonJS 是javascript模块化编程的一种规范，主要是在服务器端模块化的规范。require()用来引入外部模块；exports对象用于导出当前模块的方法或变量，唯一的导出口；module对象就代表模块本身。
 
-删除Library中相关data数据
-
-
-1sudo rm -rf /Library/PostgreSQL
-
-删除ini文件
-
-1sudo rm /etc/postgres-reg.ini">
+AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”，模块的加载不影响它后面语句的执行AMD就只有一个接口：define(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac OS 完全卸载postgreSQL数据库">
-<meta property="og:url" content="http://yoursite.com/2015/10/07/Mac-OS-完全卸载postgreSQL数据库/index.html">
+<meta property="og:title" content="CommonJS、AMD规范、CMD">
+<meta property="og:url" content="http://yoursite.com/2016/04/28/CommonJS、AMD规范、CMD/index.html">
 <meta property="og:site_name" content="Yvan's Note">
-<meta property="og:description" content="删除Application中的PostgreSql软件
+<meta property="og:description" content="CommonJS 是javascript模块化编程的一种规范，主要是在服务器端模块化的规范。require()用来引入外部模块；exports对象用于导出当前模块的方法或变量，唯一的导出口；module对象就代表模块本身。
 
-删除Library中相关data数据
-
-
-1sudo rm -rf /Library/PostgreSQL
-
-删除ini文件
-
-1sudo rm /etc/postgres-reg.ini">
-<meta property="og:updated_time" content="2015-10-07T05:21:36.000Z">
+AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”，模块的加载不影响它后面语句的执行AMD就只有一个接口：define(">
+<meta property="og:updated_time" content="2016-04-28T01:16:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac OS 完全卸载postgreSQL数据库">
-<meta name="twitter:description" content="删除Application中的PostgreSql软件
+<meta name="twitter:title" content="CommonJS、AMD规范、CMD">
+<meta name="twitter:description" content="CommonJS 是javascript模块化编程的一种规范，主要是在服务器端模块化的规范。require()用来引入外部模块；exports对象用于导出当前模块的方法或变量，唯一的导出口；module对象就代表模块本身。
 
-删除Library中相关data数据
-
-
-1sudo rm -rf /Library/PostgreSQL
-
-删除ini文件
-
-1sudo rm /etc/postgres-reg.ini">
+AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”，模块的加载不影响它后面语句的执行AMD就只有一个接口：define(">
 
 
 <script>
@@ -96,7 +75,7 @@
   };
 </script>
 
-  <title> Mac OS 完全卸载postgreSQL数据库 | Yvan's Note </title>
+  <title> CommonJS、AMD规范、CMD | Yvan's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -195,7 +174,7 @@
           
           
             
-              Mac OS 完全卸载postgreSQL数据库
+              CommonJS、AMD规范、CMD
             
           
         </h1>
@@ -204,8 +183,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-07T12:18:20+07:00" content="2015-10-07">
-            2015-10-07
+          <time itemprop="dateCreated" datetime="2016-04-28T07:13:01+07:00" content="2016-04-28">
+            2016-04-28
           </time>
         </span>
 
@@ -224,17 +203,18 @@
 
       
         <span itemprop="articleBody"><ul>
-<li><p>删除Application中的PostgreSql软件</p>
+<li><p>CommonJS 是javascript模块化编程的一种规范，主要是在服务器端模块化的规范。<br>require()用来引入外部模块；exports对象用于导出当前模块的方法或变量，唯一的导出口；module对象就代表模块本身。</p>
 </li>
-<li><p>删除Library中相关data数据</p>
+<li><p>AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”，模块的加载不影响它后面语句的执行<br>AMD就只有一个接口：define(id,dependencies,factory);</p>
+</li>
+<li><p>CMD是在AMD基础上定义的</p>
+</li>
+<li><p>CMD和AMD的区别有以下几点：</p>
 </li>
 </ul>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /<span class="keyword">Library</span>/PostgreSQL</span><br></pre></td></tr></table></figure>
-<ul>
-<li>删除ini文件</li>
-</ul>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">rm</span> /etc/postgres-<span class="keyword">reg</span>.ini</span><br></pre></td></tr></table></figure>
-</span>
+<p>1.对于依赖的模块AMD是提前执行，CMD是延迟执行。不过RequireJS从2.0开始，也改成可以延迟执行（根据写法不同，处理方式不通过）。 </p>
+<p>2.CMD推崇依赖就近，AMD推崇依赖前置。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define([&#39;./a&#39;,&#39;./b&#39;], function (a, b) &#123; &#10;&#10;    //&#20381;&#36182;&#19968;&#24320;&#22987;&#23601;&#20889;&#22909; &#10;    a.test(); &#10;    b.test(); &#10;&#125;); &#10;&#10;//CMD &#10;define(function (requie, exports, module) &#123; &#10;     &#10;    //&#20381;&#36182;&#21487;&#20197;&#23601;&#36817;&#20070;&#20889; &#10;    var a = require(&#39;./a&#39;); &#10;    a.test(); &#10;     &#10;    ... &#10;    //&#36719;&#20381;&#36182; &#10;    if (status) &#123; &#10;     &#10;        var b = requie(&#39;./b&#39;); &#10;        b.test(); &#10;    &#125; &#10;&#125;);</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -245,13 +225,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/21/React-问题/" rel="prev">React 问题</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/05/React-native-一/" rel="next">React_native(一)</a>
+              <a href="/2015/12/08/HTTP响应头信息中的-X-Frame-Options属性/" rel="next">HTTP响应头信息中的 X-Frame-Options属性</a>
             
           </div>
         </div>

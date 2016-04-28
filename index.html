@@ -169,6 +169,79 @@
           
           
             
+              <a class="post-title-link" href="/2016/04/28/CommonJS、AMD规范、CMD/" itemprop="url">
+                CommonJS、AMD规范、CMD
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-04-28T08:13:01+08:00" content="2016-04-28">
+            2016-04-28
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><ul>
+<li><p>CommonJS 是javascript模块化编程的一种规范，主要是在服务器端模块化的规范。<br>require()用来引入外部模块；exports对象用于导出当前模块的方法或变量，唯一的导出口；module对象就代表模块本身。</p>
+</li>
+<li><p>AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”，模块的加载不影响它后面语句的执行<br>AMD就只有一个接口：define(id,dependencies,factory);</p>
+</li>
+<li><p>CMD是在AMD基础上定义的</p>
+</li>
+<li><p>CMD和AMD的区别有以下几点：</p>
+</li>
+</ul>
+<p>1.对于依赖的模块AMD是提前执行，CMD是延迟执行。不过RequireJS从2.0开始，也改成可以延迟执行（根据写法不同，处理方式不通过）。 </p>
+<p>2.CMD推崇依赖就近，AMD推崇依赖前置。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define([&#39;./a&#39;,&#39;./b&#39;], function (a, b) &#123; &#10;&#10;    //&#20381;&#36182;&#19968;&#24320;&#22987;&#23601;&#20889;&#22909; &#10;    a.test(); &#10;    b.test(); &#10;&#125;); &#10;&#10;//CMD &#10;define(function (requie, exports, module) &#123; &#10;     &#10;    //&#20381;&#36182;&#21487;&#20197;&#23601;&#36817;&#20070;&#20889; &#10;    var a = require(&#39;./a&#39;); &#10;    a.test(); &#10;     &#10;    ... &#10;    //&#36719;&#20381;&#36182; &#10;    if (status) &#123; &#10;     &#10;        var b = requie(&#39;./b&#39;); &#10;        b.test(); &#10;    &#125; &#10;&#125;);</span><br></pre></td></tr></table></figure></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/12/08/HTTP响应头信息中的-X-Frame-Options属性/" itemprop="url">
                 HTTP响应头信息中的 X-Frame-Options属性
               </a>
@@ -936,7 +1009,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -998,7 +1071,7 @@
       <div class="footer-inner"> <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
