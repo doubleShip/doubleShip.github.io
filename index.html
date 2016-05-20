@@ -169,6 +169,84 @@
           
           
             
+              <a class="post-title-link" href="/2016/05/20/css自适应布局-inline-block属性/" itemprop="url">
+                css自适应布局&inline-block属性
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-05-20T09:28:48+08:00" content="2016-05-20">
+            2016-05-20
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h4 id="float布局">float布局</h4><p>浮动布局的核心就是让元素脱离普通流，然后使用width/height，margin/padding将元素定位。脱离普通流的元素，就像脱离地心引力一样，与普通流不在一个高度上。浮动布局的核心就是让元素脱离普通流，然后使用width/height，margin/padding将元素定位。脱离普通流的元素，就像脱离地心引力一样，与普通流不在一个高度上。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.wrap</span> <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#D66464</span></span></span>;</span><br><span class="line">         &#125;</span></span><br><span class="line">         <span class="rule"><span class="attribute">.clearfix</span>:<span class="value">after &#123;</span><br><span class="line">             content: <span class="string">""</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="class">.left</span> <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#00f</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">180px</span></span></span>;</span><br><span class="line">         &#125;</span></span><br><span class="line">         <span class="class">.right</span> <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">150px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#0f0</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">         &#125;</span></span><br><span class="line">         <span class="class">.center</span> <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#FFFFFF</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">110px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">160px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">150px</span></span></span>;</span><br><span class="line">         &#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="普通流布局（inline-block布局）">普通流布局（inline-block布局）</h4><ul>
+<li>使用inline-block之前先处理点小障碍：inline-block元素会有4px左右的空隙，这个是因为我们写代码时候的换行符所致。</li>
+<li>解决办法很简单：在inline-block的父元素中设置样式font-size：0；letter-spacing: -4px; 然后设置inline-block的所有兄弟元素 font-size：值；letter-spacing: 值px;  恢复正常的显示。</li>
+<li>另外还有一点需要注意的是inline-block默认是基线对齐的，而inline-block的基线又跟文本基线一致，所以在内容不同的时候并不能水平对齐。只需要用vertical-align显式声明一下top/bottom/middle对齐即可。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.wrap</span> <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#FBD570</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">letter-spacing</span>:<span class="value"> -<span class="number">4px</span></span></span>;  <span class="comment">/*用于兼容safari，根据不同字体字号或许需要做一定的调整*/</span></span><br><span class="line">             <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">150px</span></span></span>;</span><br><span class="line">         &#125;</span></span><br><span class="line">         <span class="class">.wrap</span> * <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">1rem</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">letter-spacing</span>:<span class="value"> normal</span></span>;</span><br><span class="line">         &#125;</span></span><br><span class="line">         <span class="class">.left</span> <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> top</span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#00f</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">180px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">100px</span></span></span>;</span><br><span class="line">         &#125;</span></span><br><span class="line">         <span class="class">.right</span> <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> top</span></span>;</span><br><span class="line">                <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">150px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#0f0</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> -<span class="number">150px</span></span></span>;</span><br><span class="line">         &#125;</span></span><br><span class="line">         <span class="class">.center</span> <span class="rules">&#123;</span><br><span class="line">             <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> top</span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#B373DA</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">150px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">150px</span></span></span>;</span><br><span class="line">             <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">         &#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="绝对定位">绝对定位</h4><p>前面的浮动和普通流中其实定位都是靠盒子模型控制的，与我们常说的定位还是有差别的。而绝对定位就是我们平常所说的定位，给定参考坐标系+坐标确定位置。</p>
+<h4 id="弹性盒子(flex)">弹性盒子(flex)</h4><p>弹性盒布局有如下优势：</p>
+<ol>
+<li>独立的高度控制与对齐。</li>
+<li>独立的元素顺序。</li>
+<li>指定元素之间的关系。</li>
+<li>灵活的尺寸与对齐方式。</li>
+</ol>
+<p>弹性框布局算法是方向无关的，与此相对的，块级布局侧重于垂直方向、行内布局侧重于水平方向。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/05/20/清除浮动-clearfix的原理/" itemprop="url">
                 清除浮动-clearfix的原理
               </a>
@@ -209,6 +287,7 @@
 <li>font-size: 0;content: ” “;height: 0; 这些为了把高度去掉，不然浏览器会给空白字符留高度的</li>
 <li>height: 1%;zoom:1; 这个主要就是针对ie6了 尤其是zoom:1可以把div变成haslayout属性。</li>
 </ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123; </span><br><span class="line">	<span class="attribute">content</span>: <span class="string">"."</span>; <span class="comment">/**/</span><span class="comment">/*内容为“.”就是一个英文的句号而已。也可以不写。*/</span> </span><br><span class="line">	<span class="attribute">display</span>: block; <span class="comment">/**/</span><span class="comment">/*加入的这个元素转换为块级元素。*/</span> </span><br><span class="line">	<span class="attribute">clear</span>: both; <span class="comment">/**/</span><span class="comment">/*清除左右两边浮动。*/</span> </span><br><span class="line">	<span class="attribute">visibility</span>: hidden; <span class="comment">/**/</span><span class="comment">/*可见度设为隐藏。注意它和	display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/</span> </span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*行高为0；*/</span> </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*高度为0；*/</span> </span><br><span class="line">	<span class="attribute">font-size</span>:<span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*字体大小为0；*/</span> </span><br><span class="line">&#125; </span><br><span class="line"><span class="class">.clearfix</span> &#123; *<span class="attribute">zoom</span>:<span class="number">1</span>;&#125; <span class="comment">/**/</span><span class="comment">/*这是针对于IE6的，因为IE6不支持:after伪类，这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/</span></span><br></pre></td></tr></table></figure>
 </span>
         
       
@@ -873,77 +952,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/27/SEO优化/" itemprop="url">
-                SEO优化
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-27T12:04:26+08:00" content="2015-09-27">
-            2015-09-27
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><ol>
-<li>简化代码结构，利于搜索引擎分析抓取有用内容：页面尽量采用DIV+CSS; 所有js、css采用外联方式，图片采用css sprite，减少请求次数。 </li>
-<li>重要内容优先加载(第一个链接最好是网站主关键词，不刻意要求)，可以用css来处理，索引一篇文章的长度也是有限制的，一定要把最重要的内容，优先展现给蜘蛛，这方面你可以通过查看一些比较大的网页快照来求证。</li>
-<li>每个页面只能出现一次H1标签，H2标签可以多次：H1权重很高，普遍认为仅次于title，一般资讯详情页的标题、商品详情页的标题，都放在H1里。</li>
-<li>图片一定要添加alt属性，title属性可选：蜘蛛不认识图片上的内容，只能通过alt属性来判断，如果是商品列表页，所有商品都加了alt和title的话，容易造成堆砌关键词，所以我一般是只加alt属性。</li>
-<li>图片大小声明：如果图片大小不做定义的话，页面需要重新渲染，就会影响到加载速度。</li>
-<li>链接可根据需求添加title属性以及nofllow值;非特殊性链接，链接地址一定要写入href属性，有些前端开发人员为了省事，直接用div加个click事件当链接，在视觉上和使用上确实是实现了链接效果，但是做过SEO优化的人员都知道，蜘蛛目前对于js的支持很差，基本无法读取里面的链接地址。所以说用click事件是绝对不允许的，特别是一些重要的导航链接。</li>
-<li>页面内容尽量不要做成flash、图片、视频，这些东西蜘蛛是抓不到的，就算是必须的，也要生成相应的静态页面。</li>
-<li>除首页外别的页面最好要加上面包屑型导航，导航结构一定要清晰。</li>
-</ol>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -982,7 +990,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
