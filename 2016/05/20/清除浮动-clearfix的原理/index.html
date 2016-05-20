@@ -39,25 +39,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="CSS position 属性可以取5种值static
-static 是 position 默认的属性值。任何应用了 position:static 的元素都处于常规文档流中。它处于什么位置以及它如何影响周边的元素都是由盒模型所决定的。
+<meta name="description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
+1clearfix:after &amp;#123; clear:both &amp;#125;
+其他属性描述：
 
-一个 static 定位的元素会忽略所有 top，right，bottom，left 以及 z-index 属性所声明的值。为了让你的元素能使用任何的这些属性，">
+visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
+display: block; 块级方式，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于position">
-<meta property="og:url" content="http://yoursite.com/2015/11/25/关于position/index.html">
+<meta property="og:title" content="清除浮动-clearfix的原理">
+<meta property="og:url" content="http://yoursite.com/2016/05/20/清除浮动-clearfix的原理/index.html">
 <meta property="og:site_name" content="Yvan's Note">
-<meta property="og:description" content="CSS position 属性可以取5种值static
-static 是 position 默认的属性值。任何应用了 position:static 的元素都处于常规文档流中。它处于什么位置以及它如何影响周边的元素都是由盒模型所决定的。
+<meta property="og:description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
+1clearfix:after &amp;#123; clear:both &amp;#125;
+其他属性描述：
 
-一个 static 定位的元素会忽略所有 top，right，bottom，left 以及 z-index 属性所声明的值。为了让你的元素能使用任何的这些属性，">
-<meta property="og:updated_time" content="2015-11-25T03:44:06.000Z">
+visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
+display: block; 块级方式，">
+<meta property="og:updated_time" content="2016-05-20T02:02:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于position">
-<meta name="twitter:description" content="CSS position 属性可以取5种值static
-static 是 position 默认的属性值。任何应用了 position:static 的元素都处于常规文档流中。它处于什么位置以及它如何影响周边的元素都是由盒模型所决定的。
+<meta name="twitter:title" content="清除浮动-clearfix的原理">
+<meta name="twitter:description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
+1clearfix:after &amp;#123; clear:both &amp;#125;
+其他属性描述：
 
-一个 static 定位的元素会忽略所有 top，right，bottom，left 以及 z-index 属性所声明的值。为了让你的元素能使用任何的这些属性，">
+visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
+display: block; 块级方式，">
 
 
 <script>
@@ -78,7 +84,7 @@ static 是 position 默认的属性值。任何应用了 position:static 的元�
   };
 </script>
 
-  <title> 关于position | Yvan's Note </title>
+  <title> 清除浮动-clearfix的原理 | Yvan's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -177,7 +183,7 @@ static 是 position 默认的属性值。任何应用了 position:static 的元�
           
           
             
-              关于position
+              清除浮动-clearfix的原理
             
           
         </h1>
@@ -186,8 +192,8 @@ static 是 position 默认的属性值。任何应用了 position:static 的元�
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-11-25T10:24:19+07:00" content="2015-11-25">
-            2015-11-25
+          <time itemprop="dateCreated" datetime="2016-05-20T07:54:36+07:00" content="2016-05-20">
+            2016-05-20
           </time>
         </span>
 
@@ -205,44 +211,15 @@ static 是 position 默认的属性值。任何应用了 position:static 的元�
       
 
       
-        <span itemprop="articleBody"><h3 id="CSS_position_属性可以取5种值">CSS position 属性可以取5种值</h3><h4 id="static">static</h4><ul>
-<li><p>static 是 position 默认的属性值。任何应用了 position:static 的元素都处于常规文档流中。它处于什么位置以及它如何影响周边的元素都是由盒模型所决定的。</p>
-</li>
-<li><p>一个 static 定位的元素会忽略所有 top，right，bottom，left 以及 z-index 属性所声明的值。为了让你的元素能使用任何的这些属性，你需要先为它的 position 属性应用这三个值的其中之一： absolute，relative，fixed</p>
-</li>
+        <span itemprop="articleBody"><p>:after<br>:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">clearfix</span><span class="pseudo">:after</span> &#123; <span class="attribute">clear</span>:both &#125;</span><br></pre></td></tr></table></figure>
+<p>其他属性描述：</p>
+<ul>
+<li>visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了</li>
+<li>display: block; 块级方式，如果不设置的话有的浏览器默认display的属性不是block，比如ie6</li>
+<li>font-size: 0;content: ” “;height: 0; 这些为了把高度去掉，不然浏览器会给空白字符留高度的</li>
+<li>height: 1%;zoom:1; 这个主要就是针对ie6了 尤其是zoom:1可以把div变成haslayout属性。</li>
 </ul>
-<h4 id="position">position</h4><ul>
-<li>值为 inherit 的元素和其他所有属性的继承值一样，元素只是简单地应用了与父元素一样的 position 值。</li>
-</ul>
-<h4 id="absolute">absolute</h4><ul>
-<li><p>绝对定位的元素会完全地从常规文档流中脱离。对于包围它的元素而言，它会将该绝对定位元素视为不存在。就好像 display 属性被设为 none 一样。如果你想要保持它所占有的位置而不被其他元素所填充，那么你需要使用其他的定位方式。</p>
-</li>
-<li><p>一个绝对定位的元素的起点位置是相对于它的第一个 position 值不为 static 的父元素而言的。如果在它的父元素链上没有满足条件的父元素，那么绝对定位元素则会相对于文档窗口来进行定位。</p>
-</li>
-<li><p>当你在一个元素的样式上设置 position:absolute 意味着需要考虑父元素，并且如果父元素的 position 值不为 static ，那么绝对定位元素的起点为父元素的左上角位置。</p>
-</li>
-<li><p>如果父元素没有应用除了 static 以外的 position 定位，那么它会检查父元素的父元素是否有应用非 static 定位。如果该元素应用了定位，那么它的左上角便会成为绝对元素的起点位置。如果没有则会继续向上遍历DOM直到找到一个定位元素或者寻找失败以到达最外层的浏览器窗口。</p>
-</li>
-</ul>
-<h4 id="relative">relative</h4><ul>
-<li><p>相对定位的元素也是根据 top, right, bottom, 和 left 四个属性来决定自己的位置的。但只是相对于它们原来所处于的位置进行移动。在某种意义上来说，为元素设置相对定位和为元素添加 margin 有点相似，但也有一个重要的区别。区别就是在围绕在相对定位元素附近的元素会忽略相对定位元素的移动。</p>
-</li>
-<li><p>我们可以把它看做是一张图片的重像从真实的图片的位置开始进行了一点移动。它原始图片所占据的位置仍然保留，但我们已经没法再看到它，只能看到它的重像。这样就让元素之间可以进行位置的重叠，因为相对定位元素能够移动到其他元素所占据的空间中。</p>
-</li>
-</ul>
-<h4 id="fixed">fixed</h4><ul>
-<li><p>固定定位的行为类似于绝对定位，但也有一些不同的地方。</p>
-</li>
-<li><p>首先，固定定位总是相对于浏览器窗口来进行定位的，并且通过哪些属性的 top, right, bottom, 和 left 属性来决定其位置。它抛弃了它的父元素.</p>
-</li>
-<li><p>第二个不同点是其在名字上是继承的。固定定位的元素是固定的。它们并不随着页面的滚动而移动。你可以告诉元素它所处的位置并永远不再移动。</p>
-</li>
-</ul>
-<h4 id="相关问题">相关问题</h4><ol>
-<li>你不能在同一个属性当中应用定位属性和浮动</li>
-<li>Margin 不会在绝对元素上折叠</li>
-<li>IE在 Z-index 上有一些BUG</li>
-</ol>
 </span>
       
     </div>
@@ -254,13 +231,11 @@ static 是 position 默认的属性值。任何应用了 position:static 的元�
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/08/HTTP响应头信息中的-X-Frame-Options属性/" rel="prev">HTTP响应头信息中的 X-Frame-Options属性</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/21/React-问题/" rel="next">React 问题</a>
+              <a href="/2016/05/18/浏览器缓存/" rel="next">浏览器缓存</a>
             
           </div>
         </div>
@@ -378,7 +353,7 @@ static 是 position 默认的属性值。任何应用了 position:static 的元�
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS_position_属性可以取5种值"><span class="nav-number">1.</span> <span class="nav-text">CSS position 属性可以取5种值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#static"><span class="nav-number">1.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#position"><span class="nav-number">1.2.</span> <span class="nav-text">position</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#absolute"><span class="nav-number">1.3.</span> <span class="nav-text">absolute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#relative"><span class="nav-number">1.4.</span> <span class="nav-text">relative</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fixed"><span class="nav-number">1.5.</span> <span class="nav-text">fixed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相关问题"><span class="nav-number">1.6.</span> <span class="nav-text">相关问题</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
