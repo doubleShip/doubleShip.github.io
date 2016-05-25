@@ -39,31 +39,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
-1clearfix:after &amp;#123; clear:both &amp;#125;
-其他属性描述：
+<meta name="description" content="this作用域说明
+this被赋予function所属的Object，具体来说，当function是定义在global对中时，this指向global；当function作为Object的方法时，this指向该Object：
 
-visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
-display: block; 块级方式，">
+123456var object = &amp;#123;    foo: function()&amp;#123;        alert(this === object);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="清除浮动-clearfix的原理">
-<meta property="og:url" content="http://yoursite.com/2016/05/20/清除浮动-clearfix的原理/index.html">
+<meta property="og:title" content="this作用域，apply，call说明，闭包">
+<meta property="og:url" content="http://yoursite.com/2016/05/25/this作用域，apply，call说明，闭包/index.html">
 <meta property="og:site_name" content="Yvan's Note">
-<meta property="og:description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
-1clearfix:after &amp;#123; clear:both &amp;#125;
-其他属性描述：
+<meta property="og:description" content="this作用域说明
+this被赋予function所属的Object，具体来说，当function是定义在global对中时，this指向global；当function作为Object的方法时，this指向该Object：
 
-visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
-display: block; 块级方式，">
-<meta property="og:updated_time" content="2016-05-20T02:33:30.000Z">
+123456var object = &amp;#123;    foo: function()&amp;#123;        alert(this === object);">
+<meta property="og:updated_time" content="2016-05-25T15:27:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="清除浮动-clearfix的原理">
-<meta name="twitter:description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
-1clearfix:after &amp;#123; clear:both &amp;#125;
-其他属性描述：
+<meta name="twitter:title" content="this作用域，apply，call说明，闭包">
+<meta name="twitter:description" content="this作用域说明
+this被赋予function所属的Object，具体来说，当function是定义在global对中时，this指向global；当function作为Object的方法时，this指向该Object：
 
-visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
-display: block; 块级方式，">
+123456var object = &amp;#123;    foo: function()&amp;#123;        alert(this === object);">
 
 
 <script>
@@ -84,7 +78,7 @@ display: block; 块级方式，">
   };
 </script>
 
-  <title> 清除浮动-clearfix的原理 | Yvan's Note </title>
+  <title> this作用域，apply，call说明，闭包 | Yvan's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -183,7 +177,7 @@ display: block; 块级方式，">
           
           
             
-              清除浮动-clearfix的原理
+              this作用域，apply，call说明，闭包
             
           
         </h1>
@@ -192,8 +186,8 @@ display: block; 块级方式，">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-05-20T07:54:36+07:00" content="2016-05-20">
-            2016-05-20
+          <time itemprop="dateCreated" datetime="2016-05-25T20:46:08+07:00" content="2016-05-25">
+            2016-05-25
           </time>
         </span>
 
@@ -211,16 +205,26 @@ display: block; 块级方式，">
       
 
       
-        <span itemprop="articleBody"><p>:after<br>:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">clearfix</span><span class="pseudo">:after</span> &#123; <span class="attribute">clear</span>:both &#125;</span><br></pre></td></tr></table></figure>
-<p>其他属性描述：</p>
-<ul>
-<li>visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了</li>
-<li>display: block; 块级方式，如果不设置的话有的浏览器默认display的属性不是block，比如ie6</li>
-<li>font-size: 0;content: ” “;height: 0; 这些为了把高度去掉，不然浏览器会给空白字符留高度的</li>
-<li>height: 1%;zoom:1; 这个主要就是针对ie6了 尤其是zoom:1可以把div变成haslayout属性。</li>
+        <span itemprop="articleBody"><h3 id="this作用域说明">this作用域说明</h3><ul>
+<li>this被赋予function所属的Object，具体来说，当function是定义在global对中时，this指向global；当function作为Object的方法时，this指向该Object：</li>
 </ul>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123; </span><br><span class="line">	<span class="attribute">content</span>: <span class="string">"."</span>; <span class="comment">/**/</span><span class="comment">/*内容为“.”就是一个英文的句号而已。也可以不写。*/</span> </span><br><span class="line">	<span class="attribute">display</span>: block; <span class="comment">/**/</span><span class="comment">/*加入的这个元素转换为块级元素。*/</span> </span><br><span class="line">	<span class="attribute">clear</span>: both; <span class="comment">/**/</span><span class="comment">/*清除左右两边浮动。*/</span> </span><br><span class="line">	<span class="attribute">visibility</span>: hidden; <span class="comment">/**/</span><span class="comment">/*可见度设为隐藏。注意它和	display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/</span> </span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*行高为0；*/</span> </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*高度为0；*/</span> </span><br><span class="line">	<span class="attribute">font-size</span>:<span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*字体大小为0；*/</span> </span><br><span class="line">&#125; </span><br><span class="line"><span class="class">.clearfix</span> &#123; *<span class="attribute">zoom</span>:<span class="number">1</span>;&#125; <span class="comment">/**/</span><span class="comment">/*这是针对于IE6的，因为IE6不支持:after伪类，这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="class"><span class="keyword">object</span> =</span> &#123;</span><br><span class="line">    foo: function()&#123;</span><br><span class="line">        alert(<span class="keyword">this</span> === <span class="class"><span class="keyword">object</span>);</span> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">object</span>.<span class="title">foo</span>(</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="Call和Apply说明">Call和Apply说明</h3><ul>
+<li>call 函数需要参数列表而 apply 函数允许你传递参数为数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">user</span>(<span class="params">first, last, age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// do something </span></span><br><span class="line">&#125;</span><br><span class="line">user.call(<span class="built_in">window</span>, <span class="string">'John'</span>, <span class="string">'Doe'</span>, <span class="number">30</span>);</span><br><span class="line">user.apply(<span class="built_in">window</span>, [<span class="string">'John'</span>, <span class="string">'Doe'</span>, <span class="number">30</span>]);</span><br><span class="line"><span class="comment">//执行的结果是相同的，user 函数在window上下文上被调用，并提供了相同的三个参数。</span></span><br></pre></td></tr></table></figure>
+<h3 id="Execution_context">Execution context</h3><ul>
+<li>执行上下文（简称上下文）决定了Js执行过程中可以获取哪些变量、函数、数据，一段程序可能被分割成许多不同的上下文，每一个上下文都会绑定一个变量对象（variable object），它就像一个容器，用来存储当前上下文中所有已定义或可获取的变量、函数等。位于最顶端或最外层的上下文称为全局上下文（global context），全局上下文取决于执行环境，如Node中的global和Browser中的window</li>
+<li>上下文与作用域（scope）是不同的概念。Js本身是单线程的，每当有function被执行时，就会产生一个新的上下文，这一上下文会被压入Js的上下文堆栈（context stack）中，function执行结束后则被弹出，因此Js解释器总是在栈顶上下文中执行。在生成新的上下文时，首先会绑定该上下文的变量对象，其中包括arguments和该函数中定义的变量；之后会创建属于该上下文的作用域链（scope chain），最后将this赋予这一function所属的Object</li>
+</ul>
+<h3 id="Scope_chain">Scope chain</h3><ul>
+<li>在function被执行时生成新的上下文时会先绑定当前上下文的变量对象，再创建作用域链。我们知道function的定义是可以嵌套在其他function所创建的上下文中，也可以并列地定义在同一个上下文中（如global）。作用域链实际上就是自下而上地将所有嵌套定义的上下文所绑定的变量对象串接到一起，使嵌套的function可以“继承”上层上下文的变量，而并列的function之间互不干扰</li>
+</ul>
+<h3 id="Closure">Closure</h3><ul>
+<li>如果理解了上文中提到的上下文与作用域链的机制，再来看闭包的概念就很清楚了。每个function在调用时会创建新的上下文及作用域链，而作用域链就是将外层（上层）上下文所绑定的变量对象逐一串连起来，使当前function可以获取外层上下文的变量、数据等。如果我们在function中定义新的function，同时将内层function作为值返回，那么内层function所包含的作用域链将会一起返回，即使内层function在其他上下文中执行，其内部的作用域链仍然保持着原有的数据，而当前的上下文可能无法获取原先外层function中的数据，使得function内部的作用域链被保护起来，从而形成“闭包”。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">100</span>;  </span><br><span class="line"><span class="keyword">var</span> inc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x++);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> inc1 = inc();  </span><br><span class="line"><span class="keyword">var</span> inc2 = inc();</span><br><span class="line"></span><br><span class="line">inc1();  <span class="comment">// -&gt; 0  </span></span><br><span class="line">inc1();  <span class="comment">// -&gt; 1  </span></span><br><span class="line">inc2();  <span class="comment">// -&gt; 0  </span></span><br><span class="line">inc1();  <span class="comment">// -&gt; 2  </span></span><br><span class="line">inc2();  <span class="comment">// -&gt; 1  </span></span><br><span class="line">x;       <span class="comment">// -&gt; 100  </span></span><br><span class="line"><span class="comment">//inc内部返回的匿名function在创建时生成的作用域链包括了inc中的x，即使后来赋值给inc1和inc2之后，直接在global context下调用，它们的作用域链仍然是由定义中所处的上下文环境决定，而且由于x是在function inc中定义的，无法被外层的global context所改变，从而实现了闭包的效果</span></span><br></pre></td></tr></table></figure>
+<h3 id="this_in_closure">this in closure</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"global"</span>;  </span><br><span class="line"><span class="keyword">var</span> oo = &#123;  </span><br><span class="line">  name: <span class="string">"oo"</span>,</span><br><span class="line">  getNameFunc: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">oo.getNameFunc()();  <span class="comment">// -&gt; "global" </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//////此时闭包函数被return后调用相当于：</span></span><br><span class="line">getName = oo.getNameFunc();  </span><br><span class="line">getName();  <span class="comment">// -&gt; "global"  </span></span><br><span class="line"><span class="comment">//////换个列子</span></span><br><span class="line"><span class="keyword">var</span> ooo = &#123;  </span><br><span class="line">  name: <span class="string">"ooo"</span>,</span><br><span class="line">  getName: oo.getNameFunc() <span class="comment">// 此时闭包函数的this被绑定到新的Object</span></span><br><span class="line">&#125;;</span><br><span class="line">ooo.getName();  <span class="comment">// -&gt; "ooo"</span></span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -232,13 +236,11 @@ display: block; 块级方式，">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/20/css自适应布局-inline-block属性/" rel="prev">css自适应布局&inline-block属性</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/18/浏览器缓存/" rel="next">浏览器缓存</a>
+              <a href="/2016/05/20/css自适应布局-inline-block属性/" rel="next">css自适应布局&inline-block属性</a>
             
           </div>
         </div>
@@ -356,7 +358,7 @@ display: block; 块级方式，">
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#this作用域说明"><span class="nav-number">1.</span> <span class="nav-text">this作用域说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Call和Apply说明"><span class="nav-number">2.</span> <span class="nav-text">Call和Apply说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Execution_context"><span class="nav-number">3.</span> <span class="nav-text">Execution context</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scope_chain"><span class="nav-number">4.</span> <span class="nav-text">Scope chain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Closure"><span class="nav-number">5.</span> <span class="nav-text">Closure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this_in_closure"><span class="nav-number">6.</span> <span class="nav-text">this in closure</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
