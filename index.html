@@ -169,6 +169,80 @@
           
           
             
+              <a class="post-title-link" href="/2016/06/03/CSS-伪类和伪元素的区别/" itemprop="url">
+                CSS 伪类和伪元素的区别
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-03T08:53:55+08:00" content="2016-06-03">
+            2016-06-03
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h4 id="伪类（pseudo_class）">伪类（pseudo class）</h4><ul>
+<li>伪类，会对现有的元素进行筛选。</li>
+<li>伪类总是以一个冒号开头。</li>
+</ul>
+<h4 id="伪元素（pseudo_element）">伪元素（pseudo element）</h4><ul>
+<li>伪元素，会创造出不存在的新元素。</li>
+<li>伪元素通常以两个冒号开头。</li>
+</ul>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">「伪类」的作用为「permit selection」，即允许选择一些无法用其他选择器选取的元素，必须对应某个现有的 <span class="constant">HTML</span> 元素。而「伪元素」则「create abstractions about the document tree beyond those specified by the document language」，意思是它并不依赖于 <span class="constant">HTML</span> 树的结构，即可以创造新的元素。</span><br><span class="line"></span><br><span class="line">例如，<span class="symbol">:first-child</span>是一个伪类，对应作为第一个子元素的元素；<span class="symbol">:visited</span>作为一个伪类，对应所有已经被访问过的a元素。</span><br><span class="line"></span><br><span class="line">而<span class="symbol">:</span><span class="symbol">:before</span>作为一个伪元素，对应某元素之前一个（实际不存在的）元素。同时<span class="symbol">:</span><span class="symbol">:selection</span>作为一个伪元素，它并不代表被选择的元素，而代表被选择的内容（可能是一个元素的一部分）。其他伪元素的例子还有<span class="symbol">:</span><span class="symbol">:first-line</span>，对应第一行，等等。</span><br></pre></td></tr></table></figure>
+<h4 id="浏览器兼容性">浏览器兼容性</h4><ul>
+<li>一些老旧的浏览器不支持双冒号的写法，因此如果必须兼容旧浏览器，则应该使用单冒号写法。IE 从 9 开始支持双冒号写法。</li>
+<li>在 CSS2 时代，伪元素和伪类均是以一个冒号开头的；在 CSS2.1 之后，为了对伪元素和伪类加以区分，规定伪类继续以一个冒号开头，而伪元素改为以两个冒号开头。但是为了向前兼容，浏览器同样接受 CSS2 时代已经存在的伪元素（它们包括:before, :after, :first-line, :first-letter）的单冒号写法。但是对于 CSS2 之后所有新增的伪元素（例如::selection），必须采用双冒号写法。</li>
+</ul>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/05/25/this作用域，apply，call说明，闭包/" itemprop="url">
                 this作用域，apply，call说明，闭包
               </a>
@@ -880,78 +954,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/07/Mac-OS-完全卸载postgreSQL数据库/" itemprop="url">
-                Mac OS 完全卸载postgreSQL数据库
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-07T13:18:20+08:00" content="2015-10-07">
-            2015-10-07
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><ul>
-<li><p>删除Application中的PostgreSql软件</p>
-</li>
-<li><p>删除Library中相关data数据</p>
-</li>
-</ul>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /<span class="keyword">Library</span>/PostgreSQL</span><br></pre></td></tr></table></figure>
-<ul>
-<li>删除ini文件</li>
-</ul>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">rm</span> /etc/postgres-<span class="keyword">reg</span>.ini</span><br></pre></td></tr></table></figure>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -990,7 +992,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

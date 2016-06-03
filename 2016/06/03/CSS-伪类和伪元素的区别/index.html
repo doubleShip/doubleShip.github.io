@@ -39,31 +39,40 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
-1clearfix:after &amp;#123; clear:both &amp;#125;
-其他属性描述：
+<meta name="description" content="伪类（pseudo class）
+伪类，会对现有的元素进行筛选。
+伪类总是以一个冒号开头。
 
-visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
-display: block; 块级方式，">
+伪元素（pseudo element）
+伪元素，会创造出不存在的新元素。
+伪元素通常以两个冒号开头。
+
+12345「伪类」的作用为「permit selection」，即允许选择一些无法用其他选择器选取的元素，必须对应某个现有的 HTML 元素。而「伪元素」则「create abstractions ab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="清除浮动-clearfix的原理">
-<meta property="og:url" content="http://yoursite.com/2016/05/20/清除浮动-clearfix的原理/index.html">
+<meta property="og:title" content="CSS 伪类和伪元素的区别">
+<meta property="og:url" content="http://yoursite.com/2016/06/03/CSS-伪类和伪元素的区别/index.html">
 <meta property="og:site_name" content="Yvan's Note">
-<meta property="og:description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
-1clearfix:after &amp;#123; clear:both &amp;#125;
-其他属性描述：
+<meta property="og:description" content="伪类（pseudo class）
+伪类，会对现有的元素进行筛选。
+伪类总是以一个冒号开头。
 
-visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
-display: block; 块级方式，">
-<meta property="og:updated_time" content="2016-05-20T02:33:30.000Z">
+伪元素（pseudo element）
+伪元素，会创造出不存在的新元素。
+伪元素通常以两个冒号开头。
+
+12345「伪类」的作用为「permit selection」，即允许选择一些无法用其他选择器选取的元素，必须对应某个现有的 HTML 元素。而「伪元素」则「create abstractions ab">
+<meta property="og:updated_time" content="2016-06-03T01:58:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="清除浮动-clearfix的原理">
-<meta name="twitter:description" content=":after:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了
-1clearfix:after &amp;#123; clear:both &amp;#125;
-其他属性描述：
+<meta name="twitter:title" content="CSS 伪类和伪元素的区别">
+<meta name="twitter:description" content="伪类（pseudo class）
+伪类，会对现有的元素进行筛选。
+伪类总是以一个冒号开头。
 
-visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了
-display: block; 块级方式，">
+伪元素（pseudo element）
+伪元素，会创造出不存在的新元素。
+伪元素通常以两个冒号开头。
+
+12345「伪类」的作用为「permit selection」，即允许选择一些无法用其他选择器选取的元素，必须对应某个现有的 HTML 元素。而「伪元素」则「create abstractions ab">
 
 
 <script>
@@ -84,7 +93,7 @@ display: block; 块级方式，">
   };
 </script>
 
-  <title> 清除浮动-clearfix的原理 | Yvan's Note </title>
+  <title> CSS 伪类和伪元素的区别 | Yvan's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -183,7 +192,7 @@ display: block; 块级方式，">
           
           
             
-              清除浮动-clearfix的原理
+              CSS 伪类和伪元素的区别
             
           
         </h1>
@@ -192,8 +201,8 @@ display: block; 块级方式，">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-05-20T07:54:36+07:00" content="2016-05-20">
-            2016-05-20
+          <time itemprop="dateCreated" datetime="2016-06-03T07:53:55+07:00" content="2016-06-03">
+            2016-06-03
           </time>
         </span>
 
@@ -211,16 +220,19 @@ display: block; 块级方式，">
       
 
       
-        <span itemprop="articleBody"><p>:after<br>:after的意思就是在此元素后面添加一个元素，里面的样式就是后面元素的样式，相当于在当前元素后面插入一个div；如果不考虑兼容性和美观性问题的话只需要这样写就可以了</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">clearfix</span><span class="pseudo">:after</span> &#123; <span class="attribute">clear</span>:both &#125;</span><br></pre></td></tr></table></figure>
-<p>其他属性描述：</p>
-<ul>
-<li>visibility: hidden; 隐藏，为了美观当然要隐藏掉这个元素了</li>
-<li>display: block; 块级方式，如果不设置的话有的浏览器默认display的属性不是block，比如ie6</li>
-<li>font-size: 0;content: ” “;height: 0; 这些为了把高度去掉，不然浏览器会给空白字符留高度的</li>
-<li>height: 1%;zoom:1; 这个主要就是针对ie6了 尤其是zoom:1可以把div变成haslayout属性。</li>
+        <span itemprop="articleBody"><h4 id="伪类（pseudo_class）">伪类（pseudo class）</h4><ul>
+<li>伪类，会对现有的元素进行筛选。</li>
+<li>伪类总是以一个冒号开头。</li>
 </ul>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123; </span><br><span class="line">	<span class="attribute">content</span>: <span class="string">"."</span>; <span class="comment">/**/</span><span class="comment">/*内容为“.”就是一个英文的句号而已。也可以不写。*/</span> </span><br><span class="line">	<span class="attribute">display</span>: block; <span class="comment">/**/</span><span class="comment">/*加入的这个元素转换为块级元素。*/</span> </span><br><span class="line">	<span class="attribute">clear</span>: both; <span class="comment">/**/</span><span class="comment">/*清除左右两边浮动。*/</span> </span><br><span class="line">	<span class="attribute">visibility</span>: hidden; <span class="comment">/**/</span><span class="comment">/*可见度设为隐藏。注意它和	display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/</span> </span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*行高为0；*/</span> </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*高度为0；*/</span> </span><br><span class="line">	<span class="attribute">font-size</span>:<span class="number">0</span>; <span class="comment">/**/</span><span class="comment">/*字体大小为0；*/</span> </span><br><span class="line">&#125; </span><br><span class="line"><span class="class">.clearfix</span> &#123; *<span class="attribute">zoom</span>:<span class="number">1</span>;&#125; <span class="comment">/**/</span><span class="comment">/*这是针对于IE6的，因为IE6不支持:after伪类，这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="伪元素（pseudo_element）">伪元素（pseudo element）</h4><ul>
+<li>伪元素，会创造出不存在的新元素。</li>
+<li>伪元素通常以两个冒号开头。</li>
+</ul>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">「伪类」的作用为「permit selection」，即允许选择一些无法用其他选择器选取的元素，必须对应某个现有的 <span class="constant">HTML</span> 元素。而「伪元素」则「create abstractions about the document tree beyond those specified by the document language」，意思是它并不依赖于 <span class="constant">HTML</span> 树的结构，即可以创造新的元素。</span><br><span class="line"></span><br><span class="line">例如，<span class="symbol">:first-child</span>是一个伪类，对应作为第一个子元素的元素；<span class="symbol">:visited</span>作为一个伪类，对应所有已经被访问过的a元素。</span><br><span class="line"></span><br><span class="line">而<span class="symbol">:</span><span class="symbol">:before</span>作为一个伪元素，对应某元素之前一个（实际不存在的）元素。同时<span class="symbol">:</span><span class="symbol">:selection</span>作为一个伪元素，它并不代表被选择的元素，而代表被选择的内容（可能是一个元素的一部分）。其他伪元素的例子还有<span class="symbol">:</span><span class="symbol">:first-line</span>，对应第一行，等等。</span><br></pre></td></tr></table></figure>
+<h4 id="浏览器兼容性">浏览器兼容性</h4><ul>
+<li>一些老旧的浏览器不支持双冒号的写法，因此如果必须兼容旧浏览器，则应该使用单冒号写法。IE 从 9 开始支持双冒号写法。</li>
+<li>在 CSS2 时代，伪元素和伪类均是以一个冒号开头的；在 CSS2.1 之后，为了对伪元素和伪类加以区分，规定伪类继续以一个冒号开头，而伪元素改为以两个冒号开头。但是为了向前兼容，浏览器同样接受 CSS2 时代已经存在的伪元素（它们包括:before, :after, :first-line, :first-letter）的单冒号写法。但是对于 CSS2 之后所有新增的伪元素（例如::selection），必须采用双冒号写法。</li>
+</ul>
 </span>
       
     </div>
@@ -232,13 +244,11 @@ display: block; 块级方式，">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/20/css自适应布局-inline-block属性/" rel="prev">css自适应布局&inline-block属性</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/18/浏览器缓存/" rel="next">浏览器缓存</a>
+              <a href="/2016/05/25/this作用域，apply，call说明，闭包/" rel="next">this作用域，apply，call说明，闭包</a>
             
           </div>
         </div>
@@ -356,7 +366,7 @@ display: block; 块级方式，">
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪类（pseudo_class）"><span class="nav-number">1.</span> <span class="nav-text">伪类（pseudo class）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪元素（pseudo_element）"><span class="nav-number">2.</span> <span class="nav-text">伪元素（pseudo element）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器兼容性"><span class="nav-number">3.</span> <span class="nav-text">浏览器兼容性</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
