@@ -39,43 +39,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="删除Application中的PostgreSql软件
+<meta name="description" content="三个基本原则
+整个应用只有唯一一个可信数据源，也就是只有一个 Store
+State 只能通过触发 Action 来更改
+State 的更改必须写成纯函数，也就是每次更改总是返回一个新的 State，在 Redux 里这种函数称为 Reducer
 
-删除Library中相关data数据
-
-
-1sudo rm -rf /Library/PostgreSQL
-
-删除ini文件
-
-1sudo rm /etc/postgres-reg.ini">
+ActionsAction 很简单，就是一个单纯的包含 { type, payload } 的对象，type 是一个常量用来标示动作类型，payloa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac OS 完全卸载postgreSQL数据库">
-<meta property="og:url" content="http://yoursite.com/2015/10/07/Mac-OS-完全卸载postgreSQL数据库/index.html">
+<meta property="og:title" content="Redux说明">
+<meta property="og:url" content="http://yoursite.com/2016/06/03/Redux说明/index.html">
 <meta property="og:site_name" content="Yvan's Note">
-<meta property="og:description" content="删除Application中的PostgreSql软件
+<meta property="og:description" content="三个基本原则
+整个应用只有唯一一个可信数据源，也就是只有一个 Store
+State 只能通过触发 Action 来更改
+State 的更改必须写成纯函数，也就是每次更改总是返回一个新的 State，在 Redux 里这种函数称为 Reducer
 
-删除Library中相关data数据
-
-
-1sudo rm -rf /Library/PostgreSQL
-
-删除ini文件
-
-1sudo rm /etc/postgres-reg.ini">
-<meta property="og:updated_time" content="2015-10-07T05:21:36.000Z">
+ActionsAction 很简单，就是一个单纯的包含 { type, payload } 的对象，type 是一个常量用来标示动作类型，payloa">
+<meta property="og:updated_time" content="2016-06-03T08:43:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac OS 完全卸载postgreSQL数据库">
-<meta name="twitter:description" content="删除Application中的PostgreSql软件
+<meta name="twitter:title" content="Redux说明">
+<meta name="twitter:description" content="三个基本原则
+整个应用只有唯一一个可信数据源，也就是只有一个 Store
+State 只能通过触发 Action 来更改
+State 的更改必须写成纯函数，也就是每次更改总是返回一个新的 State，在 Redux 里这种函数称为 Reducer
 
-删除Library中相关data数据
-
-
-1sudo rm -rf /Library/PostgreSQL
-
-删除ini文件
-
-1sudo rm /etc/postgres-reg.ini">
+ActionsAction 很简单，就是一个单纯的包含 { type, payload } 的对象，type 是一个常量用来标示动作类型，payloa">
 
 
 <script>
@@ -96,7 +84,7 @@
   };
 </script>
 
-  <title> Mac OS 完全卸载postgreSQL数据库 | Yvan's Note </title>
+  <title> Redux说明 | Yvan's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -195,7 +183,7 @@
           
           
             
-              Mac OS 完全卸载postgreSQL数据库
+              Redux说明
             
           
         </h1>
@@ -204,8 +192,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-07T12:18:20+07:00" content="2015-10-07">
-            2015-10-07
+          <time itemprop="dateCreated" datetime="2016-06-03T14:21:26+07:00" content="2016-06-03">
+            2016-06-03
           </time>
         </span>
 
@@ -223,18 +211,40 @@
       
 
       
-        <span itemprop="articleBody"><ul>
-<li><p>删除Application中的PostgreSql软件</p>
-</li>
-<li><p>删除Library中相关data数据</p>
-</li>
+        <span itemprop="articleBody"><h3 id="三个基本原则">三个基本原则</h3><ul>
+<li>整个应用只有唯一一个可信数据源，也就是只有一个 Store</li>
+<li>State 只能通过触发 Action 来更改</li>
+<li>State 的更改必须写成纯函数，也就是每次更改总是返回一个新的 State，在 Redux 里这种函数称为 Reducer</li>
 </ul>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /<span class="keyword">Library</span>/PostgreSQL</span><br></pre></td></tr></table></figure>
+<h3 id="Actions">Actions</h3><p>Action 很简单，就是一个单纯的包含 { type, payload } 的对象，type 是一个常量用来标示动作类型，payload 是这个动作携带的数据。Action 需要通过 store.dispatch() 方法来发送。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attribute">type</span>: <span class="string">'ADD_TODO'</span>,</span><br><span class="line">  <span class="attribute">text</span>: <span class="string">'Build my first Redux app'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Reducer">Reducer</h3><ul>
+<li>Reducer 也是 pure function，这点非常重要，所以绝对不要在 reducer 里面做一些引入 side-effects 的事情，比如：</li>
+<li>直接修改 state 参数对象</li>
+<li>请求 API</li>
+<li>调用不纯的函数，比如 Data.now() Math.random()</li>
+</ul>
+<h3 id="Store">Store</h3><p>现在有了 Action 和 Reducer，Store 的作用就是连接这两者，Store 的作用有这么几个：</p>
 <ul>
-<li>删除ini文件</li>
+<li>Hold 住整个应用的 State 状态树</li>
+<li>提供一个 getState() 方法获取 State</li>
+<li>提供一个 dispatch() 方法发送 action 更改 State</li>
+<li>提供一个 subscribe() 方法注册回调函数监听 State 的更改</li>
 </ul>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">rm</span> /etc/postgres-<span class="keyword">reg</span>.ini</span><br></pre></td></tr></table></figure>
-</span>
+<h3 id="Data_Flow">Data Flow</h3><p>redux流程的逻辑非常清晰，数据流是单向循环的，就像一个生产的流水线：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store（存放状态） -&gt; container（显示状态） -&gt; reducer （处理动作）-&gt; store</span><br></pre></td></tr></table></figure>
+<ol>
+<li>调用 store.dispatch(action)</li>
+</ol>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Action 是一个包含 &#123; type, payload &#125; 的对象，它描述了“发生了什么”，比如：</span><br><span class="line">&#123; <span class="string">type:</span> <span class="string">'LIKE_ARTICLE'</span>, <span class="string">articleID:</span> <span class="number">42</span> &#125;</span><br><span class="line">&#123; <span class="string">type:</span> <span class="string">'FETCH_USER_SUCCESS'</span>, <span class="string">response:</span> &#123; <span class="string">id:</span> <span class="number">3</span>, <span class="string">name:</span> <span class="string">'Mary'</span> &#125; &#125;</span><br><span class="line">&#123; <span class="string">type:</span> <span class="string">'ADD_TODO'</span>, <span class="string">text:</span> <span class="string">'Read the Redux docs.'</span> &#125;</span><br><span class="line">你可以在任何地方调用 store.dispatch(action)，比如组件内部，Ajax 回调函数里面等等。</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Action 会触发给 Store 指定的 root reducer</li>
+</ol>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root reducer 会返回一个完整的状态树，State 对象上的各个字段值可以由各自的 reducer 函数处理并返回新的值。</span><br><span class="line">reducer 函数接受 (<span class="keyword">state</span>, action) 两个参数</span><br><span class="line">reducer 函数判断 action.type 然后处理对应的 action.payload 数据来更新并返回一个新的 <span class="keyword">state</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>Store 会保存 root reducer 返回的状态树</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">新的 State 会替代旧的 State，然后所有 store.<span class="function"><span class="title">subscribe</span><span class="params">(listener)</span></span> 注册的回调函数会被调用，在回调函数里面可以通过 store.<span class="function"><span class="title">getState</span><span class="params">()</span></span> 拿到新的 State。</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -245,13 +255,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/21/React-问题/" rel="prev">React 问题</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/05/React-native-一/" rel="next">React_native(一)</a>
+              <a href="/2016/06/03/CSS-伪类和伪元素的区别/" rel="next">CSS 伪类和伪元素的区别</a>
             
           </div>
         </div>
@@ -369,7 +377,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三个基本原则"><span class="nav-number">1.</span> <span class="nav-text">三个基本原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Actions"><span class="nav-number">2.</span> <span class="nav-text">Actions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reducer"><span class="nav-number">3.</span> <span class="nav-text">Reducer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Store"><span class="nav-number">4.</span> <span class="nav-text">Store</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data_Flow"><span class="nav-number">5.</span> <span class="nav-text">Data Flow</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
