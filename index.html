@@ -169,6 +169,75 @@
           
           
             
+              <a class="post-title-link" href="/2016/06/16/react的webpack配置说明/" itemprop="url">
+                react的webpack配置说明
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-16T08:22:33+08:00" content="2016-06-16">
+            2016-06-16
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="基本共通配置">基本共通配置</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> config = &#123;</span><br><span class="line">        entry: [],</span><br><span class="line">        output: &#123;</span><br><span class="line">            <span class="comment">//绝对路径,用于输出到位置,文件输出目录</span></span><br><span class="line">            path: outputPath,</span><br><span class="line">            <span class="comment">//服务路径,用于热替换服务器,用于配置文件发布路径，如CDN或本地服务器</span></span><br><span class="line">            publicPath: outputPublicPath,</span><br><span class="line">            chunkFilename: <span class="string">"[name].chunk.js"</span>, <span class="comment">//公用文件打包文件</span></span><br><span class="line">            filename: <span class="string">"[name].js"</span>      <span class="comment">//根据入口文件输出的对应多个文件名</span></span><br><span class="line">        &#125;,</span><br><span class="line">        resolve: &#123;</span><br><span class="line">            extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>, <span class="string">'.json'</span>, <span class="string">'.es6'</span>], <span class="comment">// 以这些后缀结尾的文件可忽略后缀</span></span><br><span class="line">            <span class="comment">//root: path.join(__dirname, '../app')</span></span><br><span class="line">            <span class="comment">//配置别名，在项目中可缩减引用路径</span></span><br><span class="line">            alias: &#123;</span><br><span class="line">                <span class="comment">//'react': pathToReact</span></span><br><span class="line">                <span class="comment">//moment: "moment/min/moment-with-locales.min.js"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="module"><span class="keyword">module</span>: </span>&#123;</span><br><span class="line">            <span class="comment">//各种加载器，即让各种文件格式可用require引用</span></span><br><span class="line">            loaders: [</span><br><span class="line">                <span class="comment">//使用babel-loader来解析js,es6文件</span></span><br><span class="line">                &#123;</span><br><span class="line">                    test: <span class="regexp">/\.(js|es6|jsx)$/</span>,</span><br><span class="line">                    loader: [<span class="string">'babel-loader'</span>],</span><br><span class="line">                    <span class="comment">//指定作用范围,这里可不写,但是范围越小速度越快</span></span><br><span class="line">                    include: path.resolve(dir, needbabelPath),</span><br><span class="line">                    <span class="comment">//排除目录,exclude后将不匹配</span></span><br><span class="line">                    exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                    query: babelQueryBase</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="comment">//.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理</span></span><br><span class="line">                <span class="comment">//对于css文件，默认情况下webpack会把css content内嵌到js里边，运行时会使用style标签内联</span></span><br><span class="line">                &#123; test: <span class="regexp">/\.scss$/</span>, loader: <span class="string">'style!css!sass'</span> &#125;,</span><br><span class="line">                <span class="comment">//图片文件使用 url-loader 来处理，小于8kb的直接转为base64</span></span><br><span class="line">                <span class="comment">//&#123; test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'&#125;,</span></span><br><span class="line">                <span class="comment">//图片资源在加载时先压缩，然后当内容size小于~10KB时，会自动转成base64的方式内嵌进去</span></span><br><span class="line">                <span class="comment">//当图片大于10KB时，则会在img/下生成压缩后的图片，命名是[hash:8].[name].[ext]的形式</span></span><br><span class="line">                <span class="comment">//hash:8的意思是取图片内容hushsum值的前8位，这样做能够保证引用的是图片资源的最新修改版本，保证浏览器端能够即时更新</span></span><br><span class="line">                &#123;</span><br><span class="line">                    test: <span class="regexp">/\.(jpe?g|png|gif|svg)$/i</span>,</span><br><span class="line">                    loaders: [</span><br><span class="line">                        <span class="string">'image?&#123;bypassOnDebug: true, progressive:true, optimizationLevel: 3, pngquant:&#123;quality: "65-80"&#125;&#125;'</span>,</span><br><span class="line">                        <span class="string">'url?limit=10000&amp;name=img/[hash:8].[name].[ext]'</span></span><br><span class="line">                    ]</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    test: <span class="regexp">/\.(woff|eot|ttf)$/i</span>,</span><br><span class="line">                    loader: <span class="string">'url?limit=10000&amp;name=fonts/[hash:8].[name].[ext]'</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            noParse: [] <span class="comment">//noParse 是 webpack 的另一个很有用的配置项，如果你 确定一个模块中没有其它新的依赖 就可以配置这项，webpack 将不再扫描这个文件中的依赖。</span></span><br><span class="line">        &#125;,</span><br><span class="line">        plugins: [</span><br><span class="line">            <span class="keyword">new</span> ProgressBarPlugin(),</span><br><span class="line">            <span class="comment">//预加载的插件</span></span><br><span class="line">            <span class="keyword">new</span> webpack.PrefetchPlugin(<span class="string">"react"</span>),</span><br><span class="line">            <span class="keyword">new</span> webpack.PrefetchPlugin(<span class="string">"react/lib/ReactComponentBrowserEnvironment"</span>)</span><br><span class="line">        ]</span><br><span class="line">    &#125;;</span><br><span class="line">```    </span><br><span class="line">几个主要功能说明：</span><br><span class="line"></span><br><span class="line">- entry 是页面入口文件配置</span><br><span class="line">- output 是对应输出项配置（即入口文件最终要生成什么名字的文件、存放到哪里）</span><br><span class="line">- plugins 是插件项</span><br><span class="line">- <span class="module"><span class="keyword">module</span>.loaders 是最关键的一块配置。它告知 webpack 每一种文件都需要使用什么加载器来处理（"-loader"其实是可以省略不写的，多个loader之间用“!”连接起来。）</span><br><span class="line"></span><br><span class="line">编译命令</span></span><br></pre></td></tr></table></figure>
+<p>$ webpack –config XXX.js   //使用另一份配置文件（比如webpack.config2.js）来打包</p>
+<p>$ webpack –watch   //监听变动并自动打包</p>
+<p>$ webpack -p    //压缩混淆脚本，这个非常非常重要！</p>
+<p>$ webpack -d    //生成map映射文件，告知哪些模块被最终打包到哪里了<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">### dev版本</span></span><br></pre></td></tr></table></figure></p>
+<p>{<br>            // 生成sourcemap,便于开发调试,正式打包请去掉此行或改成none<br>            devtool: “eval”,// eval生成 sourcemap 的不同方式<br>            //入口文件,需要处理的文件路径<br>            entry: [<br>                ‘webpack/hot/dev-server’,<br>                ‘webpack-dev-server/client?’+baseUrl,<br>                //上面2个是开发的时候用的热替换服务器<br>                path.resolve(dir, mainFile)<br>            ],<br>            module: {<br>                //各种加载器，即让各种文件格式可用require引用<br>                loaders: [<br>                    //使用babel-loader来解析js,es6,jsx文件<br>                    {<br>                        test: /.(js|es6|jsx)$/,<br>                        loader: ‘babel’,<br>                        //指定作用范围,这里可不写,但是范围越小速度越快<br>                        include: path.resolve(dir, needbabelPath),<br>                        //排除目录,exclude后将不匹配<br>                        exclude: /node_modules/,<br>                        query: babelMerge(babelQueryBase, {<br>                            “plugins”: [<br>                                //这个插件通过任意转换的方式去封装React组件。可以随心所欲的摆弄组件了<br>                                [“react-transform”, {<br>                                    “transforms”: [<br>                                        {<br>                                            //一个React转换装置，该装置通过引用Hot Module Replacement API使热重载 React 的类成为可能<br>                                            “transform”: “react-transform-hmr”,<br>                                            // 如果你使用React Native，這裡要改用”react-native”<br>                                            “imports”: [“react”],<br>                                            “locals”: [“module”]<br>                                        },<br>                                        {<br>                                            //呈现React组件的错误信息<br>                                            “transform”: “react-transform-catch-errors”,<br>                                            //捕获异常时用redbox-react来对错误进行更加友好的反馈<br>                                            “imports”: [“react”, “redbox-react”]<br>                                        }<br>                                    ]<br>                                }]<br>                            ]<br>                        })<br>                    }<br>                ]<br>            },<br>            plugins: [<br>                //热替换插件<br>                new webpack.HotModuleReplacementPlugin(),<br>                //允许错误不打断程序<br>                new webpack.NoErrorsPlugin()<br>            ]<br>        }<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">### production版本</span></span><br></pre></td></tr></table></figure></p>
+<p>{<br>            entry: {<br>                “js/app”: path.join(dir, ‘src/js/app.jsx’),<br>                “js/vendor” : vendor // 第三方库包<br>            },<br>            module: {<br>                loaders: [<br>                    {<br>                        test: /.(js|es6|jsx)$/,<br>                        loader: ‘babel’,<br>                        exclude: /node_modules/,<br>                        query: babelMerge(babelQueryBase)<br>                    },<br>                    {//单独打包css文件<br>                        test: /.scss$/,<br>                        loader:  ExtractTextPlugin.extract(‘style’, ‘css!autoprefixer!sass’)<br>                    }<br>                ],<br>                //noParse: [“react”]<br>            },<br>            resolve: {<br>                alias: {//重定向<br>                    //react: “react/dist/react.min.js”,<br>                    //moment: “moment/min/moment-with-locales.min.js”<br>                }<br>            },<br>            //声明一个外部依赖,该文件不会打包进去,但是要在html页面引入<br>            externals: {<br>                //‘react’: ‘React’<br>            },<br>            autoprefixer: { //浏览器兼容前缀<br>                browsers: [‘last 2 version’, ‘safari 5’, ‘ie 8’, ‘ie 9’, ‘opera 12.1’, ‘ios 6’, ‘android 4’]<br>            },<br>            plugins: [<br>                //js文件的压缩<br>                new webpack.optimize.UglifyJsPlugin({<br>                    compressor: {<br>                        warnings: false<br>                    }<br>                    //except: [‘$super’, ‘$’, ‘exports’, ‘require’]    //排除关键字<br>                }),<br>                //将公共代码抽离出来合并为一个文件<br>                new webpack.optimize.CommonsChunkPlugin({<br>                    name:”js/vendor”,<br>                    filename:”js/vendor.bundle.js”,<br>                    minChunks:3 //// 提取至少3个模块共有的部分<br>                }),<br>                //单独打包css<br>                new ExtractTextPlugin(“css/styles.css”),<br>                //HtmlWebpackPlugin，模板生成相关的配置，每个对于一个页面的配置，有几个写几个<br>                new HtmlWebpackPlugin(htmlTemplet),<br>                //减小打包文件大小<br>                new webpack.DefinePlugin({<br>                    ‘process.env.NODE_ENV’: ‘“production”‘<br>                })<br>            ]<br>        }<br>```</p>
+<p>详细配置地址：<a href="https://github.com/doubleShip/webpack" target="_blank" rel="external">https://github.com/doubleShip/webpack</a>                </p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/06/03/Redux说明/" itemprop="url">
                 Redux说明
               </a>
@@ -888,105 +957,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/11/25/关于position/" itemprop="url">
-                关于position
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-11-25T11:24:19+08:00" content="2015-11-25">
-            2015-11-25
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h3 id="CSS_position_属性可以取5种值">CSS position 属性可以取5种值</h3><h4 id="static">static</h4><ul>
-<li><p>static 是 position 默认的属性值。任何应用了 position:static 的元素都处于常规文档流中。它处于什么位置以及它如何影响周边的元素都是由盒模型所决定的。</p>
-</li>
-<li><p>一个 static 定位的元素会忽略所有 top，right，bottom，left 以及 z-index 属性所声明的值。为了让你的元素能使用任何的这些属性，你需要先为它的 position 属性应用这三个值的其中之一： absolute，relative，fixed</p>
-</li>
-</ul>
-<h4 id="position">position</h4><ul>
-<li>值为 inherit 的元素和其他所有属性的继承值一样，元素只是简单地应用了与父元素一样的 position 值。</li>
-</ul>
-<h4 id="absolute">absolute</h4><ul>
-<li><p>绝对定位的元素会完全地从常规文档流中脱离。对于包围它的元素而言，它会将该绝对定位元素视为不存在。就好像 display 属性被设为 none 一样。如果你想要保持它所占有的位置而不被其他元素所填充，那么你需要使用其他的定位方式。</p>
-</li>
-<li><p>一个绝对定位的元素的起点位置是相对于它的第一个 position 值不为 static 的父元素而言的。如果在它的父元素链上没有满足条件的父元素，那么绝对定位元素则会相对于文档窗口来进行定位。</p>
-</li>
-<li><p>当你在一个元素的样式上设置 position:absolute 意味着需要考虑父元素，并且如果父元素的 position 值不为 static ，那么绝对定位元素的起点为父元素的左上角位置。</p>
-</li>
-<li><p>如果父元素没有应用除了 static 以外的 position 定位，那么它会检查父元素的父元素是否有应用非 static 定位。如果该元素应用了定位，那么它的左上角便会成为绝对元素的起点位置。如果没有则会继续向上遍历DOM直到找到一个定位元素或者寻找失败以到达最外层的浏览器窗口。</p>
-</li>
-</ul>
-<h4 id="relative">relative</h4><ul>
-<li><p>相对定位的元素也是根据 top, right, bottom, 和 left 四个属性来决定自己的位置的。但只是相对于它们原来所处于的位置进行移动。在某种意义上来说，为元素设置相对定位和为元素添加 margin 有点相似，但也有一个重要的区别。区别就是在围绕在相对定位元素附近的元素会忽略相对定位元素的移动。</p>
-</li>
-<li><p>我们可以把它看做是一张图片的重像从真实的图片的位置开始进行了一点移动。它原始图片所占据的位置仍然保留，但我们已经没法再看到它，只能看到它的重像。这样就让元素之间可以进行位置的重叠，因为相对定位元素能够移动到其他元素所占据的空间中。</p>
-</li>
-</ul>
-<h4 id="fixed">fixed</h4><ul>
-<li><p>固定定位的行为类似于绝对定位，但也有一些不同的地方。</p>
-</li>
-<li><p>首先，固定定位总是相对于浏览器窗口来进行定位的，并且通过哪些属性的 top, right, bottom, 和 left 属性来决定其位置。它抛弃了它的父元素.</p>
-</li>
-<li><p>第二个不同点是其在名字上是继承的。固定定位的元素是固定的。它们并不随着页面的滚动而移动。你可以告诉元素它所处的位置并永远不再移动。</p>
-</li>
-</ul>
-<h4 id="相关问题">相关问题</h4><ol>
-<li>你不能在同一个属性当中应用定位属性和浮动</li>
-<li>Margin 不会在绝对元素上折叠</li>
-<li>IE在 Z-index 上有一些BUG</li>
-</ol>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1025,7 +995,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
